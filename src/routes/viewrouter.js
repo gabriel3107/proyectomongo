@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductManager from '../routes/ProductManager.js'
+import ProductManager from './ProductManager.router.js'
 import { __dirname } from "../utils.js";
 import path from 'node:path';
 
@@ -24,6 +24,10 @@ router.get('/realtimeproducts', (req, res) => {
     res.render('realTimeProducts');
 });
 
+router.get("/chat",async(req,res)=>{
+    const messages = await chatManager.getAll();
+    res.render("chat",{messages});
+});
 
 
 export default router;
