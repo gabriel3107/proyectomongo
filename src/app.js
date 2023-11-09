@@ -27,9 +27,13 @@ app.set('view engine', 'handlebars');
 app.use('/', viewsRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/carts",cartsRouter);
-try{D8WITwByoebt@cluster55575ge.cox6brd.mongodb.net/entregadb?retryWrites=true&w=majority");
+app.use((req, res) => {
+res.status(404).send('Error 404: Page Not Found');
+  });
+
+try{
+    await mongoose.connect("mongodb+srv://gabrielescarate33:Xo9mD8WITwByoebt@cluster55575ge.cox6brd.mongodb.net/segundaentregamongo?retryWrites=true&w=majority");
     console.log("Connected to DB");
-    await mongoose.connect("mongodb+srv://gabrielescarate33:Xo9m
 }
 catch(error){console.log(error.message)};
 const server= app.listen(8080, ()=>console.log("Server running"));
