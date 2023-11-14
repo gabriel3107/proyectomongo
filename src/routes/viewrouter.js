@@ -1,7 +1,6 @@
 import { Router } from "express";
 import ProductManager from './ProductManager.router.js'
-import { __dirname } from "../utils.js";
-import path from 'node:path';
+// import { __dirname } from "../utils.js";
 import { productPath } from '../utils.js';
 import ProductManager from '../dao/dbManager/products.manager.js';
 import ChatManager from "../dao/dbManager/chat.manager.js";

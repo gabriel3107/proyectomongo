@@ -2,19 +2,17 @@ import express from "express";
 import handlebars from 'express-handlebars'
 import { __dirname } from './utils.js';
 import { Server } from "socket.io";
-import viewsRouter from "./routes/views.router.js";
-import productsRouter from './routes/products.router.js';
+import viewsRouter from "./routes/viewsrouter.js";
+import productsRouter from './routes/ProductManager.router.js';
 import cartsRouter from "./routes/carts.router.js";
 import { Server } from "socket.io";
 import mongoose from "mongoose";
 import ChatManager from "./dao/dbManager/chat.manager.js";
 const chatManager= new ChatManager();
-import ProductManager from "./dao/dbManager/products.manager.js";
 
-import ProductManager from './routes/ProductManager.router.js'
 import path from 'node:path';
 const productsFilePath = path.join(__dirname, "./files/productos.json");
-const productManager = new ProductManager(productsFilePath);
+
 
 const app = express();
 
